@@ -1,8 +1,3 @@
-# Write the README.md content to a file so the user can download it.
-from pathlib import Path
-
-readme_content = """# Caik Rian — Portfólio (IA & Full Stack)
-
 > **Analista de Sistemas Jr.** focado em **IA (Vapi.AI, Shazan.AI, OpenAI, Gemini, n8n, Typebot)** e **Full Stack (React/Next.js, Node.js, PHP/MySQL, Firebase)**. Interfaces elegantes, acessíveis e performáticas com estética **glass** e microinterações.
 
 [LinkedIn](https://www.linkedin.com/in/caikrian/) • [GitHub](https://github.com/CaikRian) • **E-mail:** <caik.job1707@gmail.com>
@@ -29,5 +24,6 @@ readme_content = """# Caik Rian — Portfólio (IA & Full Stack)
 - **Deploy:** (recomendado) Vercel, Netlify ou GitHub Pages
 
 ---
+
 
 
