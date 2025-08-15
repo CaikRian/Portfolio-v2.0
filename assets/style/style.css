@@ -41,10 +41,7 @@ a{color:inherit; text-decoration:none}
 /* global overlays */
 .ui-scan::before{content:""; position:fixed; inset:0; pointer-events:none; z-index:0; background: repeating-linear-gradient(to bottom, rgba(255,255,255,.03) 0 2px, transparent 2px 4px); mix-blend-mode: overlay}
 .ui-noise::before{content:""; position:fixed; inset:0; pointer-events:none; z-index:0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 -0.75 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E"); mix-blend-mode:soft-light}
-@media (prefers-reduced-motion:no-preference){
-  @keyframes scanMove{0%{transform:translateY(-15%)}100%{transform:translateY(15%)}}
-  .ui-scan::before{animation: scanMove 6s linear infinite}
-}
+
 
 /* header */
 .site-header{position:sticky; top:0; z-index:1000; backdrop-filter: blur(var(--blur)); -webkit-backdrop-filter: blur(var(--blur)); background: linear-gradient(to bottom, rgba(0,0,0,.35), transparent); border-bottom:1px solid rgba(255,255,255,.08); transition: transform .3s ease}
@@ -98,13 +95,7 @@ h1{font-size: clamp(38px, 6.5vw, 72px); line-height:1.06; margin:0 0 12px; lette
 .caret{display:inline-block; width:10px; height:1em; vertical-align:bottom; background:currentColor; margin-left:4px; animation: blink 1.1s steps(2,end) infinite}
 @keyframes blink{50%{opacity:0}}
 .glitch{position:relative; display:inline-block}
-@media (prefers-reduced-motion:no-preference){
-  .glitch::before,.glitch::after{content:attr(data-text); position:absolute; left:0; top:0; clip-path: inset(0 0 0 0); mix-blend-mode:screen; opacity:.4}
-  .glitch::before{color:var(--primary); transform:translate(1px,0); animation:gl1 3s infinite}
-  .glitch::after{color:var(--primary-2); transform:translate(-1px,0); animation:gl2 2.6s infinite}
-  @keyframes gl1{0%,100%{clip-path: inset(0 0 0 0)} 20%{clip-path: inset(10% 0 40% 0)} 40%{clip-path: inset(80% 0 5% 0)} 60%{clip-path: inset(30% 0 30% 0)} 80%{clip-path: inset(5% 0 70% 0)}}
-  @keyframes gl2{0%,100%{clip-path: inset(0 0 0 0)} 25%{clip-path: inset(60% 0 20% 0)} 50%{clip-path: inset(15% 0 50% 0)} 75%{clip-path: inset(35% 0 25% 0)}}
-}
+
 .cta{display:flex; gap:12px; margin:16px 0 10px; flex-wrap:wrap}
 .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; height:44px; padding:0 16px; border-radius:12px; border:1px solid var(--glass-stroke); background:var(--glass-bg); color:var(--text); backdrop-filter: blur(var(--blur)); position:relative; overflow:hidden}
 .btn::after{content:""; position:absolute; inset:0; background: linear-gradient(120deg, rgba(255,255,255,.12), transparent 60%); opacity:.6}
@@ -123,7 +114,6 @@ h1{font-size: clamp(38px, 6.5vw, 72px); line-height:1.06; margin:0 0 12px; lette
 .hero-card .dots{height:8px; background: radial-gradient(#fff 35%, transparent 38%) 0 0/8px 8px, radial-gradient(#fff 35%, transparent 38%) 4px 4px/8px 8px; opacity:.18; border-radius:8px}
 .hero-card .line{height:1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent)}
 .scan-beam{position:absolute; inset:0 0 0 auto; width:2px; background:linear-gradient(to bottom, transparent, rgba(255,255,255,.6), transparent); opacity:.4}
-@media (prefers-reduced-motion:no-preference){ @keyframes beam{0%{transform:translateY(-20%)} 100%{transform:translateY(120%)}} .scan-beam{animation: beam 4s linear infinite} }
 
 /* sections */
 .section{padding: clamp(56px, 8vw, 96px) 0}
@@ -410,8 +400,4 @@ to{ transform: translateY(10px); opacity: 0; }
 .gh-stats{ grid-template-columns: 1fr; }
 }
 
-/* A11y: reduz animações quando preferido */
-@media (prefers-reduced-motion: reduce){
-*{ transition: none !important; animation: none !important; }
-}
 
